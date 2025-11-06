@@ -1,0 +1,48 @@
+# EditorConfig 配置文件
+# 统一不同编辑器的代码风格
+# 更多信息: https://editorconfig.org
+
+# 表示这是最顶层的配置文件
+root = true
+
+# 所有文件的通用配置
+[*]
+# 字符编码
+charset = utf-8
+# 换行符（lf = Unix/Linux, crlf = Windows, cr = Mac）
+end_of_line = lf
+# 缩进风格（space 或 tab）
+indent_style = space
+# 缩进大小
+indent_size = 2
+# 文件末尾保留一个空行
+insert_final_newline = true
+# 移除行尾空格
+trim_trailing_whitespace = true
+# 单行最大长度（0 表示不限制）
+max_line_length = 100
+
+# Markdown 文件特殊配置
+[*.md]
+# Markdown 中保留行尾空格（用于换行）
+trim_trailing_whitespace = false
+# 不限制行长度
+max_line_length = 0
+
+# JSON 文件配置
+[*.json]
+indent_size = 2
+
+# YAML 文件配置
+[*.{yml,yaml}]
+indent_size = 2
+
+# Makefile 配置
+[Makefile]
+# Makefile 必须使用 tab 缩进
+indent_style = tab
+
+# Shell 脚本配置
+[*.sh]
+end_of_line = lf
+

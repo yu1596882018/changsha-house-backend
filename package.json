@@ -1,16 +1,56 @@
 {
-  "name": "node-koa-template",
+  "name": "changsha-house-backend",
   "version": "1.0.0",
-  "description": "搭建一个可复用、以koa为主的服务端开发环境",
+  "description": "长沙楼市查询平台 - 基于 Koa2 的高性能后端服务，集成数据爬虫、Redis缓存、ELK监控的全栈解决方案",
   "main": "src/main.js",
+  "keywords": [
+    "koa",
+    "nodejs",
+    "房产查询",
+    "数据爬虫",
+    "elasticsearch",
+    "redis",
+    "mysql",
+    "微信公众号",
+    "rest-api",
+    "real-estate"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development PORT=8899 nodemon ./src/main",
+    "start": "cross-env NODE_ENV=production node ./src/main",
     "prod": "pm2 start ./pm2.json",
-    "prettier": "prettier --ignore-path .gitignore --write ."
+    "stop": "pm2 stop ./pm2.json",
+    "restart": "pm2 restart ./pm2.json",
+    "reload": "pm2 reload ./pm2.json",
+    "delete": "pm2 delete ./pm2.json",
+    "logs": "pm2 logs app",
+    "monit": "pm2 monit",
+    "prettier": "prettier --ignore-path .gitignore --write .",
+    "prettier:check": "prettier --ignore-path .gitignore --check .",
+    "lint": "prettier --ignore-path .gitignore --check .",
+    "format": "prettier --ignore-path .gitignore --write .",
+    "init:es": "node ./src/scripts/initEsIndex.js",
+    "crawl": "node ./src/scripts/houseMain.js",
+    "test": "echo \"暂无测试用例\" && exit 0"
   },
-  "repository": "git@github.com:yu1596882018/node-koa-template.git",
-  "author": "yu1596882018 <1596882018@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yu1596882018/changshaHouse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yu1596882018/changshaHouse/issues"
+  },
+  "homepage": "https://github.com/yu1596882018/changshaHouse#readme",
+  "author": {
+    "name": "yu1596882018",
+    "email": "1596882018@qq.com",
+    "url": "https://github.com/yu1596882018"
+  },
   "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  },
   "dependencies": {
     "@yu1596882018/server-sdk": "^1.0.3",
     "bcryptjs": "^2.4.3",

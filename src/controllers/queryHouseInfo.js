@@ -1,8 +1,33 @@
+/**
+ * 长沙楼市查询平台 - 查询控制器
+ *
+ * @description 处理楼盘查询相关的业务逻辑
+ * @author yu1596882018
+ * @date 2021-02-15
+ *
+ * @功能列表
+ * - getCodeImg: 获取验证码图片
+ * - verifyCode: 验证预售证号并获取楼盘ID
+ * - collectHouseInfo: 触发爬虫采集楼盘数据
+ */
+
 const rp = require('request-promise')
 const cheerio = require('cheerio')
 const houseMain = require('./../scripts/houseMain')
 
 module.exports = {
+  /**
+   * 获取验证码图片
+   *
+   * @description 从住建局官网获取验证码图片
+   * @route GET /api/getCodeImg
+   * @returns {Image} 验证码图片（PNG格式）
+   *
+   * @说明
+   * 1. 验证码与Session绑定
+   * 2. 验证码有效期10分钟
+   * 3. 每次请求都会生成新的验证码
+   */
   getCodeImg: async (ctx, next) => {
     ctx.set('Content-Type', 'image/png')
     const imgRes = await rp('http://www.cszjxx.net/newCaptcha?r=' + Math.random(), {
