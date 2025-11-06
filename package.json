@@ -17,21 +17,15 @@
   ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development PORT=8899 nodemon ./src/main",
-    "start": "cross-env NODE_ENV=production node ./src/main",
     "prod": "pm2 start ./pm2.json",
     "stop": "pm2 stop ./pm2.json",
     "restart": "pm2 restart ./pm2.json",
     "reload": "pm2 reload ./pm2.json",
-    "delete": "pm2 delete ./pm2.json",
     "logs": "pm2 logs app",
-    "monit": "pm2 monit",
-    "prettier": "prettier --ignore-path .gitignore --write .",
-    "prettier:check": "prettier --ignore-path .gitignore --check .",
     "lint": "prettier --ignore-path .gitignore --check .",
     "format": "prettier --ignore-path .gitignore --write .",
     "init:es": "node ./src/scripts/initEsIndex.js",
-    "crawl": "node ./src/scripts/houseMain.js",
-    "test": "echo \"暂无测试用例\" && exit 0"
+    "crawl": "node ./src/scripts/houseMain.js"
   },
   "repository": {
     "type": "git",
