@@ -170,7 +170,7 @@ crawler: {
 crontab -e
 
 # 每天凌晨2点运行爬虫
-0 2 * * * cd /var/www/changshaHouse && node src/scripts/houseMain.js >> logs/crawler.log 2>&1
+0 2 * * * cd /var/www/changsha-house-backend && node src/scripts/houseMain.js >> logs/crawler.log 2>&1
 ```
 
 ---
@@ -198,9 +198,9 @@ console.log('Debug:', data)
 
 ## 🔗 相关文档
 
-- [数据库设计](../../docs/ARCHITECTURE.md#数据库设计)
-- [爬虫架构](../../docs/ARCHITECTURE.md#爬虫设计)
-- [API文档](../../docs/API_DOCUMENTATION.md)
+- [数据库设计](../../README.md#数据库设计) - 查看 README 中的数据库设计章节
+- [爬虫架构](../../README.md#爬虫设计) - 查看 README 中的爬虫设计章节
+- [系统架构](../../README.md#系统设计) - 查看 README 中的系统设计章节
 
 ---
 

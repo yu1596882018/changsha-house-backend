@@ -44,7 +44,7 @@ esClient.create({
     timestamp: '2022-07-11T07:18:57.988Z',
     ip: '202.104.136.67',
     networkSpeed: 573.13,
-    pageId: 'changshaHouseMoblie',
+    pageId: 'changsha-house-mobile',
   },
 })
 esClient.create({
@@ -99,7 +99,7 @@ esClient.create({
     ],
     markUser: 'NWXnMEMTpT1657521681788',
     markUv: 'bYNNDMJpmE1657521681789',
-    pageId: 'changshaHouseMoblie',
+    pageId: 'changsha-house-mobile',
   },
 })
 esClient.create({
@@ -150,6 +150,6 @@ esClient.create({
     errName: 'ReferenceError',
     errMessage: 'ssss is not defined',
     errStack:
-      'ReferenceError: ssss is not defined\n    at D:\\workspace\\changshaHouse\\src\\app.js:20:1\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)',
+      'ReferenceError: ssss is not defined\n    at D:\\workspace\\changsha-house-backend\\src\\app.js:20:1\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)',
   },
 })

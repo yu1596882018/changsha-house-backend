@@ -35,12 +35,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:yu1596882018/changshaHouse.git"
+    "url": "git@github.com:yu1596882018/changsha-house-backend.git"
   },
   "bugs": {
-    "url": "https://github.com/yu1596882018/changshaHouse/issues"
+    "url": "https://github.com/yu1596882018/changsha-house-backend/issues"
   },
-  "homepage": "https://github.com/yu1596882018/changshaHouse#readme",
+  "homepage": "https://github.com/yu1596882018/changsha-house-backend#readme",
   "author": {
     "name": "yu1596882018",
     "email": "1596882018@qq.com",

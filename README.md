@@ -11,10 +11,10 @@
 
 [功能特性](#-功能特性) •
 [技术架构](#-技术架构) •
+[系统设计](#-系统设计) •
 [快速开始](#-快速开始) •
-[API文档](#-api-文档) •
-[部署指南](#-部署指南) •
-[📑 文档索引](./PROJECT_INDEX.md)
+[性能优化](#-性能优化) •
+[项目亮点](#-项目亮点)
 
 </div>
 
@@ -209,8 +209,8 @@ src/
 1. **克隆项目**
 
 ```bash
-git clone https://github.com/yu1596882018/changshaHouse.git
-cd changshaHouse
+git clone https://github.com/yu1596882018/changsha-house-backend.git
+cd changsha-house-backend
 ```
 
 2. **安装依赖**
@@ -681,10 +681,6 @@ GET /api/collectHouseInfo?id={楼盘ID}
 
 ---
 
-完整API文档请查看：[API_DOCUMENTATION.md](./docs/API_DOCUMENTATION.md)
-
----
-
 ## 📦 部署指南
 
 ### 生产环境部署
@@ -739,7 +735,7 @@ pm2 save
 #### 4. 配置 Nginx
 
 ```nginx
-upstream changshahouse_backend {
+upstream changsha_house_backend {
     server 127.0.0.1:8899;
     keepalive 64;
 }
@@ -750,7 +746,7 @@ server {
 
     # 前端静态资源
     location / {
-        root /var/www/changshahouse-frontend;
+        root /var/www/changsha-house-frontend;
         try_files $uri $uri/ /index.html;
 
         # 浏览器缓存配置
@@ -760,7 +756,7 @@ server {
 
     # API 接口代理
     location /api {
-        proxy_pass http://changshahouse_backend;
+        proxy_pass http://changsha_house_backend;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
@@ -802,8 +798,6 @@ firewall-cmd --reload
 # 添加到 crontab
 0 2 * * * /usr/bin/mysqldump -u root -p'password' changsha_house > /backup/db_$(date +\%Y\%m\%d).sql
 ```
-
-详细部署文档请查看：[DEPLOYMENT.md](./docs/DEPLOYMENT.md)
 
 ---
 
@@ -1179,8 +1173,6 @@ app.use(
 
 ## 📝 更新日志
 
-查看完整更新记录：[CHANGELOG.md](./CHANGELOG.md)
-
 ### v1.0.0 (2021-02-15)
 
 **初始版本发布**
@@ -1234,9 +1226,9 @@ app.use(
 
 ## 📚 相关链接
 
-- **前端项目**: [changshaHouseMoblie](https://github.com/yu1596882018/changshaHouseMoblie)
+- **前端项目**: [changsha-house-mobile](https://github.com/yu1596882018/changsha-house-mobile)
+- **后端项目**: [changsha-house-backend](https://github.com/yu1596882018/changsha-house-backend)
 - **监控SDK**: [@yu1596882018/server-sdk](https://github.com/yu1596882018/monitorJS)
-- **架构详细文档**: [ARCHITECTURE.md](./docs/ARCHITECTURE.md)
 
 ---
 
