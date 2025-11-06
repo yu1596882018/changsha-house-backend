@@ -16,7 +16,9 @@ const modelList = {}
 module.exports = async (tableId) => {
   let example = exampleList[tableId]
   if (config.connectMysql && !example) {
-    example = exampleList[tableId] = houseChildrenInfoSchema(mysqlDb, sequelize.DataTypes, { tableId })
+    example = exampleList[tableId] = houseChildrenInfoSchema(mysqlDb, sequelize.DataTypes, {
+      tableId,
+    })
     await example.sync()
   }
 

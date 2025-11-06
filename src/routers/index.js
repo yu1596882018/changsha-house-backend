@@ -28,13 +28,13 @@
  */
 
 // 导入各个路由模块
-const houseEnterList = require('./houseEnterList')          // 楼盘入驻列表
-const houseInfoList = require('./houseInfoList')            // 楼盘信息
-const houseChildrenRouter = require('./houseChildren')      // 楼栋信息
-const houseChildrenInfoRouter = require('./houseChildrenInfo')  // 房源详情
-const queryHouseInfoRouter = require('./queryHouseInfo')    // 查询相关
-const tempRouter = require('./temp')                        // 临时测试
-const restsRouter = require('./rests')                      // RESTful API
+const houseEnterList = require('./houseEnterList') // 楼盘入驻列表
+const houseInfoList = require('./houseInfoList') // 楼盘信息
+const houseChildrenRouter = require('./houseChildren') // 楼栋信息
+const houseChildrenInfoRouter = require('./houseChildrenInfo') // 房源详情
+const queryHouseInfoRouter = require('./queryHouseInfo') // 查询相关
+const tempRouter = require('./temp') // 临时测试
+const restsRouter = require('./rests') // RESTful API
 
 /**
  * 导出所有路由模块

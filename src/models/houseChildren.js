@@ -8,7 +8,6 @@ class HouseChildrenModel extends CommonApi {
   constructor(example) {
     super(example)
   }
-
 }
 
 const exampleList = {}

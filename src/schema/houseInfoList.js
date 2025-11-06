@@ -128,8 +128,8 @@ module.exports = function (sequelize, DataTypes) {
       sequelize,
       tableName: 'house_info_list',
       timestamps: true,
-      'updatedAt': 'updated_at',
-      'createdAt': 'created_at'
-    },
+      updatedAt: 'updated_at',
+      createdAt: 'created_at',
+    }
   )
 }

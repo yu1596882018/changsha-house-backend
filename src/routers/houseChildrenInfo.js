@@ -5,7 +5,10 @@ const routerCommonExt = require('./routerCommonExt')
 
 routerCommonExt(houseChildrenInfoRouter, houseChildrenInfoCont, '/houseChildrenInfo/:tableId')
 
-houseChildrenInfoRouter.post('/houseChildrenInfo/:tableId/bulkCreate', houseChildrenInfoCont.bulkCreate)
+houseChildrenInfoRouter.post(
+  '/houseChildrenInfo/:tableId/bulkCreate',
+  houseChildrenInfoCont.bulkCreate
+)
 
 houseChildrenInfoRouter.delete('/houseChildrenInfo/:tableId', houseChildrenInfoCont.destroyAll)
 

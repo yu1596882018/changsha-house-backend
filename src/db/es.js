@@ -75,9 +75,10 @@ if (connectES) {
   esClient = new elasticsearch.Client(esConfig)
 
   // 测试连接
-  esClient.ping({
-    requestTimeout: 5000,
-  })
+  esClient
+    .ping({
+      requestTimeout: 5000,
+    })
     .then(() => {
       console.log('✅ Elasticsearch 连接成功')
       console.log(`   - 服务地址: ${esConfig.host}`)
@@ -102,7 +103,7 @@ if (connectES) {
       create: () => Promise.resolve(),
       delete: () => Promise.resolve(),
       exists: () => Promise.resolve(false),
-    }
+    },
   }
 
   console.log('ℹ️  Elasticsearch 未启用（connectES: false）')

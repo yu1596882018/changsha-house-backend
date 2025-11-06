@@ -66,4 +66,3 @@ module.exports = async (id) => {
   // console.log('success - houseChildren - POST', result)
   return datas
 }
-

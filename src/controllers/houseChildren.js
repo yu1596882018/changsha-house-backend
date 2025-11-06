@@ -7,18 +7,22 @@ module.exports = {
   ...commonExt(houseChildrenModel, attrNames, { modelIsMethod: true }),
 
   async bulkCreate(ctx, next) {
-    let result = await (await houseChildrenModel(ctx.params.tableId)).bulkCreate(ctx.request.body.data || [])
+    let result = await (
+      await houseChildrenModel(ctx.params.tableId)
+    ).bulkCreate(ctx.request.body.data || [])
 
     ctx.body = result
     await next()
   },
 
   async destroyAll(ctx, next) {
-    await (await houseChildrenModel(ctx.params.tableId)).destroy(
+    await (
+      await houseChildrenModel(ctx.params.tableId)
+    ).destroy(
       {},
       {
         truncate: true,
-      },
+      }
     )
 
     ctx.body = 'success'

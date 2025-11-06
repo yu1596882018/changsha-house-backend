@@ -59,6 +59,6 @@ module.exports = function (sequelize, DataTypes, extendOptions = {}) {
       sequelize,
       tableName: 'house_children_info_' + tableId,
       timestamps: false,
-    },
+    }
   )
 }

@@ -38,6 +38,6 @@ module.exports = function (sequelize, DataTypes) {
       sequelize,
       tableName: 'house_enter_list',
       timestamps: false,
-    },
+    }
   )
 }

@@ -5,7 +5,7 @@
  * @param options
  * @returns {{addCont(*, *): Promise<void>, deleteCont(*, *): Promise<void>, updateCont(*, *): Promise<void>, queryCont(*, *): Promise<void>}}
  */
-module.exports = function(exampleModel, attrNames = [], options = {}) {
+module.exports = function (exampleModel, attrNames = [], options = {}) {
   const { modelIsMethod } = options
 
   return {
@@ -19,14 +19,16 @@ module.exports = function(exampleModel, attrNames = [], options = {}) {
         }
       })
 
-      let result = await (modelIsMethod ? (await exampleModel(ctx.params.tableId)) : exampleModel).create(options)
+      let result = await (
+        modelIsMethod ? await exampleModel(ctx.params.tableId) : exampleModel
+      ).create(options)
 
       ctx.body = result
       await next()
     },
 
     async deleteCont(ctx, next) {
-      await (modelIsMethod ? (await exampleModel(ctx.params.tableId)) : exampleModel).destroy({
+      await (modelIsMethod ? await exampleModel(ctx.params.tableId) : exampleModel).destroy({
         id: ctx.params.id,
       })
 
@@ -44,9 +46,12 @@ module.exports = function(exampleModel, attrNames = [], options = {}) {
         // }
       })
 
-      await (modelIsMethod ? (await exampleModel(ctx.params.tableId)) : exampleModel).update(options, {
-        id: ctx.params.id,
-      })
+      await (modelIsMethod ? await exampleModel(ctx.params.tableId) : exampleModel).update(
+        options,
+        {
+          id: ctx.params.id,
+        }
+      )
 
       ctx.body = 'success'
       await next()
@@ -62,16 +67,21 @@ module.exports = function(exampleModel, attrNames = [], options = {}) {
         }
       })
 
-      await (modelIsMethod ? (await exampleModel(ctx.params.tableId)) : exampleModel).update(options, {
-        id: ctx.params.id,
-      })
+      await (modelIsMethod ? await exampleModel(ctx.params.tableId) : exampleModel).update(
+        options,
+        {
+          id: ctx.params.id,
+        }
+      )
 
       ctx.body = 'success'
       await next()
     },
 
     async queryOneCont(ctx, next) {
-      let result = await (modelIsMethod ? (await exampleModel(ctx.params.tableId)) : exampleModel).findOne({
+      let result = await (
+        modelIsMethod ? await exampleModel(ctx.params.tableId) : exampleModel
+      ).findOne({
         id: ctx.params.id,
       })
 
@@ -90,7 +100,9 @@ module.exports = function(exampleModel, attrNames = [], options = {}) {
         }
       })
 
-      let result = await (modelIsMethod ? (await exampleModel(ctx.params.tableId)) : exampleModel).findAndCountAll(options, +ctx.query.offset || 0, +ctx.query.limit || 10)
+      let result = await (
+        modelIsMethod ? await exampleModel(ctx.params.tableId) : exampleModel
+      ).findAndCountAll(options, +ctx.query.offset || 0, +ctx.query.limit || 10)
 
       ctx.body = result
       await next()

@@ -7,9 +7,11 @@
 ### 数据采集脚本
 
 #### 1. houseMain.js - 爬虫主流程
+
 **功能**：完整采集指定楼盘的所有数据
 
 **使用方法**：
+
 ```bash
 # 通过 npm 脚本运行
 npm run crawl
@@ -19,15 +21,18 @@ node src/scripts/houseMain.js
 ```
 
 **采集流程**：
+
 1. 采集楼盘基本信息
 2. 采集楼栋列表
 3. 采集每个楼栋的房源信息
 4. 对失败的楼栋进行重试
 
 **参数**：
+
 - `id` (string) - 楼盘唯一标识
 
 **示例**：
+
 ```javascript
 const houseMain = require('./houseMain')
 await houseMain('abc123def456')
@@ -36,11 +41,13 @@ await houseMain('abc123def456')
 ---
 
 #### 2. houseInfoList.js - 楼盘信息采集
+
 **功能**：采集楼盘的基本信息（名称、地址、开发商等）
 
 **数据来源**：住建局官网楼盘详情页
 
 **采集字段**：
+
 - 楼盘名称
 - 预售证号
 - 开发商
@@ -52,9 +59,11 @@ await houseMain('abc123def456')
 ---
 
 #### 3. houseChildren.js - 楼栋列表采集
+
 **功能**：采集指定楼盘下的所有楼栋信息
 
 **采集字段**：
+
 - 楼栋ID
 - 楼栋名称
 - 总楼层数
@@ -65,9 +74,11 @@ await houseMain('abc123def456')
 ---
 
 #### 4. houseChildrenInfo.js - 房源信息采集
+
 **功能**：采集指定楼栋下的所有房源详细信息
 
 **采集字段**：
+
 - 房号
 - 楼层
 - 建筑面积
@@ -83,9 +94,11 @@ await houseMain('abc123def456')
 ### 系统初始化脚本
 
 #### 5. initEsIndex.js - Elasticsearch索引初始化
+
 **功能**：初始化Elasticsearch日志索引
 
 **使用方法**：
+
 ```bash
 npm run init:es
 # 或
@@ -93,6 +106,7 @@ node src/scripts/initEsIndex.js
 ```
 
 **创建的索引**：
+
 - `changsha_house_logs` - 应用日志索引
 
 ---

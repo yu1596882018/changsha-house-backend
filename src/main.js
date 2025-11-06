@@ -1,6 +1,6 @@
 /**
  * 长沙楼市查询平台 - 服务启动入口
- * 
+ *
  * @description 应用启动文件，负责创建HTTP/HTTPS服务器并监听端口
  * @author yu1596882018
  * @date 2021-02-15
@@ -42,13 +42,13 @@ if (NODE_ENV === 'development' && config.openHttps) {
   App.use(
     enforceHttps({
       port: 8081,
-    }),
+    })
   )
 
   // SSL 证书配置
   const sslOptions = {
-    key: fs.readFileSync(path.join(__dirname, './data/server.key')),   // 私钥
-    cert: fs.readFileSync(path.join(__dirname, './data/server.pem')),  // 证书
+    key: fs.readFileSync(path.join(__dirname, './data/server.key')), // 私钥
+    cert: fs.readFileSync(path.join(__dirname, './data/server.pem')), // 证书
   }
 
   // 创建 HTTPS 服务器

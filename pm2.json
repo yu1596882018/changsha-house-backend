@@ -6,13 +6,7 @@
       "instances": -1,
       "exec_mode": "cluster",
       "watch": false,
-      "ignore_watch": [
-        "node_modules",
-        "logs",
-        "data",
-        "scripts",
-        ".git"
-      ],
+      "ignore_watch": ["node_modules", "logs", "data", "scripts", ".git"],
       "env": {
         "NODE_ENV": "production",
         "PORT": 8899

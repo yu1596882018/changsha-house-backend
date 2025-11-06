@@ -63,13 +63,13 @@ module.exports = {
      * 用于记录应用中的错误信息
      */
     errorLogger: {
-      type: 'dateFile',                              // 类型：按日期切分的文件
-      filename: `${baseLogPath}/error/error`,        // 文件名（不含后缀）
-      alwaysIncludePattern: true,                    // 始终在文件名中包含日期模式
-      pattern: '-yyyy-MM-dd-hh.log',                 // 日期模式（每小时一个文件）
-      encoding: 'utf-8',                             // 文件编码
-      maxLogSize: 10 * 1024 * 1024,                  // 单个文件最大 10MB
-      backups: 30,                                   // 保留最近 30 个文件
+      type: 'dateFile', // 类型：按日期切分的文件
+      filename: `${baseLogPath}/error/error`, // 文件名（不含后缀）
+      alwaysIncludePattern: true, // 始终在文件名中包含日期模式
+      pattern: '-yyyy-MM-dd-hh.log', // 日期模式（每小时一个文件）
+      encoding: 'utf-8', // 文件编码
+      maxLogSize: 10 * 1024 * 1024, // 单个文件最大 10MB
+      backups: 30, // 保留最近 30 个文件
     },
 
     /**
@@ -126,7 +126,7 @@ module.exports = {
      */
     errorLogger: {
       appenders: ['errorLogger'],
-      level: 'error'
+      level: 'error',
     },
 
     /**
@@ -135,7 +135,7 @@ module.exports = {
      */
     resLogger: {
       appenders: ['resLogger'],
-      level: 'info'
+      level: 'info',
     },
 
     /**
@@ -144,7 +144,7 @@ module.exports = {
      */
     mysqlLogger: {
       appenders: ['mysqlLogger'],
-      level: 'info'
+      level: 'info',
     },
 
     /**
@@ -153,7 +153,7 @@ module.exports = {
      */
     default: {
       appenders: ['DebugLogger'],
-      level: 'all'
+      level: 'all',
     },
   },
 
